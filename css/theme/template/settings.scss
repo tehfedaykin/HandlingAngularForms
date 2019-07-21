@@ -7,7 +7,7 @@ $backgroundColor: #2b2b2b;
 // Primary/body text
 $mainFont: 'Lato', sans-serif;
 $mainFontSize: 40px;
-$mainColor: #eee;
+$mainColor: #2A302C;
 
 // Vertical spacing between blocks of text
 $blockMargin: 20px;
@@ -15,11 +15,11 @@ $blockMargin: 20px;
 // Headings
 $headingMargin: 0 0 $blockMargin 0;
 $headingFont: 'League Gothic', Impact, sans-serif;
-$headingColor: #eee;
+$headingColor: #2A302C;
 $headingLineHeight: 1.2;
 $headingLetterSpacing: normal;
 $headingTextTransform: uppercase;
-$headingTextShadow: none;
+$headingTextShadow: 5px 5px 5px #000;
 $headingFontWeight: normal;
 $heading1TextShadow: $headingTextShadow;
 
@@ -40,7 +40,4 @@ $selectionColor: #fff;
 // to return a background image or gradient
 @mixin bodyBackground() {
 	background: $backgroundColor;
-	background-image: url('../../img/spacebgdark.png');
-	background-repeat: no-repeat;
-  background-size: cover;
 }

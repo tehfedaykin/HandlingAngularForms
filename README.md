@@ -1,1 +1,1 @@
-![The Control Value Accessor – Like a Wormhole in Space for Your Forms, Only More Useful!](/img/cvacover.png "The Control Value Accessor – Like a Wormhole in Space for Your Forms, Only More Useful! Cover Slide")
+![Harnessing the Power of the Control Value Accessor for Better Reactive Forms](/img/cover.png "Harnessing the Power of the Control Value Accessor for Better Reactive Forms Cover Slide")
