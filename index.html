@@ -28,6 +28,9 @@
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
+		<link rel="stylesheet" href="plugin/prism/monstera.css">
+
+
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
@@ -66,7 +69,6 @@
 					</ul>
 				</section>
 				<!----------------------------------------->
-				<!----------------------------------------->
 				<section id="CVA">
 				<h2>The Control Value Accessor</h2>
 				</section>
@@ -87,7 +89,7 @@
 				<section id="example-scenario">
 					<h2>Example Form Scenario</h2>
 					<p class="fragment"><i>I have created custom components that I would <br />
-						like to act as form elements in my reactive form.</i></p>
+						like to act as form elements in my reactive form ...</i></p>
 					<ol>
 						<li class="fragment">A typeahead component that displays one value to the user, <br />
 							but passes an id as it's form value</li>
@@ -103,23 +105,36 @@
 						<li class="fragment"><span class="block">FormControlName:</span> directive that ties form element to a formControl.</li>
 					</ul>
 				</section>
-				<section id="our-reactive-form">
-					<p>Our Reactive Form</p>
-					<img class="plain" src="img/reactive-form.png" />
+				<section id="our-reactive-form"
+					data-markdown="code/our-reactive-form.md"
+					data-separator="^\n\n\n"
+					data-separator-vertical="^\n\n"
+					data-separator-notes="^Note:"
+					data-charset="iso-8859-15">
 				</section>
-				<section id="form-markup">
-					<img class="plain" src="img/reactive-form-html.png" />
+				<section id="form-markup"
+					data-markdown="code/form-markup.md"
+					data-separator="^\n\n\n"
+					data-separator-vertical="^\n\n"
+					data-separator-notes="^Note:"
+					data-charset="iso-8859-15">
 				</section>
-				<section id="meh-component-pt1">
-					<p>Solution #1</p>
-					<img class="plain" src="img/output-component.png" />
+				<section id="meh-component-pt1"
+					data-markdown="code/meh-component-pt1.md"
+					data-separator="^\n\n\n"
+					data-separator-vertical="^\n\n"
+					data-separator-notes="^Note:"
+					data-charset="iso-8859-15">
 				</section>
-				<section id="meh-component-pt2">
-					<p>parent component w/ form</p>
-					<img class="plain" src="img/output-parent.png" />
+				<section id="meh-component-pt2"
+					data-markdown="code/meh-component-pt2.md"
+					data-separator="^\n\n\n"
+					data-separator-vertical="^\n\n"
+					data-separator-notes="^Note:"
+					data-charset="iso-8859-15">
 				</section>
 				<section id="pitfalls">
-					<h2>pitfalls</h2>
+					<h2>Pitfalls</h2>
 					<ul>
 						<li class="fragment">Managing additional methods for listening to change events</li>
 						<li class="fragment">Having to use additional method of .patchValue on form control</li>
@@ -129,58 +144,96 @@
 				<section id="cva-applied">
 					<h2>Control Value Accessor Applied</h2>
 				</section>
-				<section id="cva-interface">
-					<p>CVA Interface</p>
-					<img class="plain" src="img/cva-interface.png" />
+				<section id="cva-interface"
+					data-markdown="code/cva-interface.md"
+					data-separator="^\n\n\n"
+					data-separator-vertical="^\n\n"
+					data-separator-notes="^Note:"
+					data-charset="iso-8859-15">
 				</section>
 				<section id="typescript-interface">
 					<h2>Typescript with Classes & Interfaces</h2>
-					<p class="fragment">Classes implementing interfaces <b>must</b> follow the structure described by the interface.</p>
+					<p class="fragment">Classes implementing interfaces <b>must</b> follow the 
+						<br />structure described by the interface.</p>
 				</section>
-				<section id="writeValue">
-					<p>write Value</p>
-					<img class="plain" src="img/cva-write.png" />
-					<p>Writes a new value to the element. This will be called when the FormControl is instantiated AND when patchValue or setValue is called.</p>
+				<section id="writeValue"
+					data-markdown="code/writeValue.md"
+					data-separator="^\n\n\n"
+					data-separator-vertical="^\n\n"
+					data-separator-notes="^Note:"
+					data-charset="iso-8859-15">
 				</section>
-				<section id="onChange">
-					<p>register OnChange</p>
-					<img class="plain" src="img/cva-change.png" />
-					<p>Registers a callback function that is called when
-					<br />the control's value changes in the UI.</p>
+				<section id="onChange"
+					data-markdown="code/onChange.md"
+					data-separator="^\n\n\n"
+					data-separator-vertical="^\n\n"
+					data-separator-notes="^Note:"
+					data-charset="iso-8859-15">
 				</section>
-				<section id="onTouched">
-					<p>register OnTouched</p>
-					<img class="plain" src="img/cva-touch.png" />
-					<p>Registers a callback function is called by the forms
-					<br />API on initialization to update the form model on blur.</p>
+				<section id="onTouched"
+					data-markdown="code/onTouched.md"
+					data-separator="^\n\n\n"
+					data-separator-vertical="^\n\n"
+					data-separator-notes="^Note:"
+					data-charset="iso-8859-15">
 				</section>
-				<section id="setDisabled">
-					<p>set Disabled State</p>
-					<img class="plain" src="img/cva-disabled.png" />
-					<p>Function that is called by the forms API when the control status changes to or from 'DISABLED'. 
-						This will be called when the FormControl is instantiated IF the disabled key is present AND when .enable() or .disable() is called.</p>
+				<section id="setDisabled"
+					data-markdown="code/setDisabled.md"
+					data-separator="^\n\n\n"
+					data-separator-vertical="^\n\n"
+					data-separator-notes="^Note:"
+					data-charset="iso-8859-15">
 				</section>
 				<section id="implementation">
 					<h2>Implementation</h2>
 					<p>We need to register the <b>NG_VALUE_ACCESSOR</b> provider and implement the <b>ControlValueAccessor</b> methods.</p>
 				</section>
-				<section id="NG_VALUE_ACCESSOR">
+				<section id="NG_VALUE_ACCESSOR"
+					data-markdown="code/NG_VALUE_ACCESSOR.md"
+					data-separator="^\n\n\n"
+					data-separator-vertical="^\n\n"
+					data-separator-notes="^Note:"
+					data-charset="iso-8859-15">
+				</section>
+				<!-- <section id="NG_VALUE_ACCESSOR">
 					<img class="plain" style="height:500px" src="img/NG_VALUE_ACCESSOR.png" />
 					<p class="small">The NG_VALUE_ACCESSOR is used to register the component as a provider for the controlValueAccessor, and 
 							because this will register the component early we'll need to use forwardRef to refer to it.</p>
+				</section> -->
+				<section id="basic-wrapper"
+					data-markdown="code/basic-wrapper.md"
+					data-separator="^\n\n\n"
+					data-separator-vertical="^\n\n"
+					data-separator-notes="^Note:"
+					data-charset="iso-8859-15">
 				</section>
-				<section id="basic-wrapper">
-					<p>Basic CVA implementation</p>
-					<img class="plain" style="height:600px" src="img/CVA.png" />
+				<section id="sweet-component-parent"
+					data-markdown="code/sweet-component-parent.md"
+					data-separator="^\n\n\n"
+					data-separator-vertical="^\n\n"
+					data-separator-notes="^Note:"
+					data-charset="iso-8859-15">
 				</section>
-				<section id="sweet-component-parent">
+				<!-- <section id="sweet-component-parent">
 					<p>In form markup</p>
-					<img class="plain" src="img/CVA-markup.png" />
+					<pre><code>
+					<form [formGroup]="myForm">
+						<div class="form-group">
+							<label for="name">Name</label>
+							<my-sweet-component class="form-control" formControlName="name"></my-sweet-component>
+						</div>
+					</form>
+					</code></pre>
 					<div class="fragment">
 						<p class="small">same as ...</p>
-						<img class="plain" src="img/CVA-markup-alt.png" />
+						<pre><code><form [formGroup]="myForm">
+								<div class="form-group">
+									<label for="name">Name</label>
+									<my-sweet-component class="form-control" [formControl]="myForm.controls.name"><my-sweet-component>
+								</div>
+							</form></code></pre>
 					</div>
-				</section>
+				</section> -->
 				<section id="back-to-og-problem">
 					<h2>Back to Our Original Problem</h2>
 					<p>Using CVA in practice for typeahead and rating form controls</p>
@@ -188,29 +241,43 @@
 				<section id="typeahead-demo">
 					<img class="plain" src="img/typeahead-demo.gif" />
 				</section>
-				<section id="typeahead-data">
-					<p>We want to display the 'name' value to our users and submit the 'id' value to our form</p>
-					<img class="plain" src="img/typeahead-data.png" />
+				<section id="typeahead-data"
+					data-markdown="code/typeahead-data.md"
+					data-separator="^\n\n\n"
+					data-separator-vertical="^\n\n"
+					data-separator-notes="^Note:"
+					data-charset="iso-8859-15">
 				</section>
-				<section id="typeahead-component-markup">
-					<p>Typeahead markup</p>
-					<p class="small">(using <a href="https://valor-software.com/ngx-bootstrap/#/typeahead" target="_blank">ngx-bootstrap</a> typeahead)</p>
-					<img class="plain" src="img/typeahead-html.png" />
+				<section id="typeahead-html"
+					data-markdown="code/typeahead-html.md"
+					data-separator="^\n\n\n"
+					data-separator-vertical="^\n\n"
+					data-separator-notes="^Note:"
+					data-charset="iso-8859-15">
 				</section>
-				<section id="typeahead-component">
-					<p>Typeahead component</p>
-					<img class="plain" style="height:600px" src="img/typeahead-ts.png" />
+				<section id="typeahead-component"
+					data-markdown="code/typeahead-component.md"
+					data-separator="^\n\n\n"
+					data-separator-vertical="^\n\n"
+					data-separator-notes="^Note:"
+					data-charset="iso-8859-15">
 				</section>
 				<section id="starrating-demo">
 					<img class="plain" src="img/starrating-demo.gif" />
 				</section>
-				<section id="rating-component-html">
-					<p>Star Rating Markup</p>
-					<img class="plain" src="img/star-html.png" />
+				<section id="rating-component-html"
+					data-markdown="code/rating-component-html.md"
+					data-separator="^\n\n\n"
+					data-separator-vertical="^\n\n"
+					data-separator-notes="^Note:"
+					data-charset="iso-8859-15">
 				</section>
-				<section id="rating-component">
-					<p>Star Rating Component</p>
-					<img class="plain" style="height:600px" src="img/star-ts.png" />
+				<section id="rating-component"
+					data-markdown="code/rating-component.md"
+					data-separator="^\n\n\n"
+					data-separator-vertical="^\n\n"
+					data-separator-notes="^Note:"
+					data-charset="iso-8859-15">
 				</section>
 				<section id="testing">
 					<h2>Testing our CVA Components</h2>
@@ -222,34 +289,52 @@
 						<li class="fragment">Testing interacting with the CVA component sets validation classes as expected.</li>
 					</ul>
 				</section>
-				<section id="test-setup">
-					<p>Test Setup - Creating a test host component & using ViewChild</p>
-					<img class="plain" style="height:600px" src="img/typeahead-test-setup.png" />
+				<section id="test-setup"
+					data-markdown="code/test-setup.md"
+					data-separator="^\n\n\n"
+					data-separator-vertical="^\n\n"
+					data-separator-notes="^Note:"
+					data-charset="iso-8859-15">
 				</section>
-				<section id="typeahead-test-change">
-					<p>Testing Typeahead Change Event</p>
-					<img class="plain" src="img/typeahead-test-change.png" />
-					<p>We care that the formControl is being notified of the change when an option is selected.</p>
+				<section id="typeahead-test-change"
+					data-markdown="code/typeahead-test-change.md"
+					data-separator="^\n\n\n"
+					data-separator-vertical="^\n\n"
+					data-separator-notes="^Note:"
+					data-charset="iso-8859-15">
 				</section>
-				<section id="typeahead-test-touch">
+				<section id="typeahead-test-touch"
+					data-markdown="code/typeahead-test-touch.md"
+					data-separator="^\n\n\n"
+					data-separator-vertical="^\n\n"
+					data-separator-notes="^Note:"
+					data-charset="iso-8859-15">
+				</section>
+				<!-- <section id="typeahead-test-touch">
 					<p>Testing Touch Event (& validation)</p>
 					<img class="plain" src="img/typeahead-test-touch.png" />
 					<p>We care that the formControl element is getting the ng-touched class and touched property true.</p>
+				</section> -->
+				<section id="typeahead-test-writevalue"
+					data-markdown="code/typeahead-test-writevalue.md"
+					data-separator="^\n\n\n"
+					data-separator-vertical="^\n\n"
+					data-separator-notes="^Note:"
+					data-charset="iso-8859-15">
 				</section>
-				<section id="typeahead-test-writevalue">
-					<p>Testing setValue</p>
-					<img class="plain" src="img/typeahead-test-writevalue.png" />
-					<p>We care that the ui selects the appropriate dropdown when writeValue is called.</p>
+				<section id="rating-test-change"
+					data-markdown="code/rating-test-change.md"
+					data-separator="^\n\n\n"
+					data-separator-vertical="^\n\n"
+					data-separator-notes="^Note:"
+					data-charset="iso-8859-15">
 				</section>
-				<section id="rating-test-change">
-					<p>Testing Rating Change Event</p>
-					<img class="plain" src="img/rating-test-change.png" />
-					<p>We care that the formControl is being notified of the change when a star is clicked.</p>
-				</section>
-				<section id="rating-test-disabled">
-					<p>Testing Rating Disabling</p>
-					<img class="plain" src="img/rating-test-disable.png" />
-					<p>We care that component implements "disabled" functionality correctly.</p>
+				<section id="rating-test-disabled"
+					data-markdown="code/rating-test-disabled.md"
+					data-separator="^\n\n\n"
+					data-separator-vertical="^\n\n"
+					data-separator-notes="^Note:"
+					data-charset="iso-8859-15">
 				</section>
 				<section id="key-concepts">
 					<h2>Key Concepts</h2>
@@ -290,13 +375,20 @@
 				display: 'block',
 				progress: true,
 				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/marked.js', callback: function() {
+					} },
 					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+					// { src: 'plugin/highlight/highlight.js', async: true, callback: function() { 
+					// 	hljs.configure({
+					// 		tabReplace: '    '
+					// 	})
+					// 	hljs.initHighlightingOnLoad(); 
+					// } },
+					{
+						src: 'plugin/prism/prism.js', async: true
+					}
 				]
 			});
-
 		</script>
 	</body>
 </html>

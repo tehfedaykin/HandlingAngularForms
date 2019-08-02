@@ -103,7 +103,6 @@
 	 * Helper function for constructing a markdown slide.
 	 */
 	function createMarkdownSlide( content, options ) {
-
 		options = getSlidifyOptions( options );
 
 		var notesMatch = content.split( new RegExp( options.notesSeparator, 'mgi' ) );
@@ -125,7 +124,6 @@
 	 * on the passed in separator arguments.
 	 */
 	function slidify( markdown, options ) {
-
 		options = getSlidifyOptions( options );
 
 		var separatorRegex = new RegExp( options.separator + ( options.verticalSeparator ? '|' + options.verticalSeparator : '' ), 'mg' ),
@@ -222,7 +220,6 @@
 					if( xhr.readyState === 4 ) {
 						// file protocol yields status code 0 (useful for local debug, mobile applications etc.)
 						if ( ( xhr.status >= 200 && xhr.status < 300 ) || xhr.status === 0 ) {
-
 							section.outerHTML = slidify( xhr.responseText, {
 								separator: section.getAttribute( 'data-separator' ),
 								verticalSeparator: section.getAttribute( 'data-separator-vertical' ),
