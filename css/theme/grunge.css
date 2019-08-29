@@ -12,10 +12,10 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
  *********************************************/
 body {
   background-color: #EDF8FC !important;
-  background-image: url("../../img/grunge.jpg");
+  background-image: url("../../img/glitter.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top left;
+  background-position: bottom left;
   background-color: #fff; }
 
 .reveal {
