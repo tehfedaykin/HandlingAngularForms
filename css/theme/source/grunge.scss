@@ -29,7 +29,7 @@ $headingTextShadow: none;
 $headingLetterSpacing: normal;
 $headingTextTransform: uppercase;
 $headingFontWeight: 600;
-$linkColor: #2a76dd;
+$linkColor: #e44fa1;
 $linkColorHover: lighten( $linkColor, 15% );
 $selectionBackgroundColor: lighten( $linkColor, 25% );
 
@@ -45,11 +45,11 @@ section.has-dark-background {
 }
 
 @mixin bodyBackground() {
-	background-color: #EDF8FC !important;
-	background-image: url('../../img/grunge.jpg');
+	background-color: rgb(23, 23, 23) !important;
+	background-image: url('../../img/glitter.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: top left;
+	background-position: bottom left;
 }
 
 // Theme template ------------------------------
