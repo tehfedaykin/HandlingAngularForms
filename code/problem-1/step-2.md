@@ -4,8 +4,9 @@ Get fields control and use setValidators method.
 
 ```typescript
 onChanges() {
+  const subCategoryControl = this.recipeForm.get('subcategory');
+  
   this.recipeForm.get('category').valueChanges.subscribe(val => {
-    const subCategoryControl = this.recipeForm.get('subcategory');
     if (val) {
       subCategoryControl.setValidators(Validators.required);
     }
