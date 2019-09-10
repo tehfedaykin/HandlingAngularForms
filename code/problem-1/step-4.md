@@ -16,12 +16,11 @@ onChanges() {
     const subCatCtrl = this.recipeForm.get('subcategory');
     if (val) {
       subCatCtrl.setValidators([Validators.required, this.minValidator]);
-      subCatCtrl.updateValueAndValidity();
     }
     else {
       subCatCtrl.setValidators(null);
-      subCatCtrl.updateValueAndValidity();
     }
   });
+  subCatCtrl.updateValueAndValidity();
 }
 ```

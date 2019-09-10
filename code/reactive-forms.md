@@ -2,7 +2,7 @@
 ```html
 <form>
   <label for="name">Name</form>
-  <input class="form-control" [formControl]="name" ngModel>
+  <input class="form-control" [formControl]="name">
 </form>
 ```
 
