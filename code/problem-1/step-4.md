@@ -20,7 +20,7 @@ onChanges() {
     else {
       subCatCtrl.setValidators(null);
     }
+    subCatCtrl.updateValueAndValidity();
   });
-  subCatCtrl.updateValueAndValidity();
 }
 ```
